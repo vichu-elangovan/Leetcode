@@ -21,6 +21,8 @@ class Solution(object):
                     return [i, j]
 
 
+
+
 # --- Solved example --------------------------------------------------------
 # Input:  nums = [2, 7, 11, 15], target = 9
 #
