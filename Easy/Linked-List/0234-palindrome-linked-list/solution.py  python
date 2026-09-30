@@ -1,0 +1,90 @@
+"""
+234. Palindrome Linked List  (Easy)
+https://leetcode.com/problems/palindrome-linked-list/
+
+Approach
+--------
+Three steps, done in place without extra space for a copy:
+1. Find the middle using slow/fast pointers (fast moves 2x speed).
+2. Reverse the second half of the list starting from `slow`.
+3. Compare the first half (from head) against the reversed second
+   half (from prev) node by node — if all values match, it's a
+   palindrome.
+
+Time:  O(n) - three linear passes (find middle, reverse, compare)
+Space: O(1) - reversal is done in place, no extra list/array
+"""
+
+
+class Solution(object):
+    def isPalindrome(self, head):
+
+        slow = head
+        fast = head
+
+        # find middle
+
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+
+        # reverse second half
+
+        prev = None
+        curr = slow
+
+        while curr:
+            nxt = curr.next
+            curr.next = prev
+            prev = curr
+            curr = nxt
+
+        # check both halves
+
+        left = prev
+        right = head
+
+        while left:
+
+            if left.val != right.val:
+                return False
+
+            right = right.next
+            left = left.next
+        return True
+
+
+# --- Solved example --------------------------------------------------------
+# Input: head = 1 -> 2 -> 2 -> 1 -> None
+#
+# Find middle: slow ends at the 2nd "2" (index 2)
+#   slow=1,fast=1 -> slow=2(idx1),fast=2(idx2) -> slow=1(idx3),fast=None -> stop
+#   slow is now at index 2 (value 2)
+#
+# Reverse from slow (2 -> 1 -> None) becomes (1 -> 2 -> None)
+#   prev ends up pointing to node with val 1 (the old tail)
+#
+# Compare: left starts at prev (1,2), right starts at head (1,2,2,1)
+#   left=1, right=1 -> match
+#   left=2, right=2 -> match
+#   left is now None -> loop ends
+#
+# Output: True
+
+if __name__ == "__main__":
+    class ListNode(object):
+        def __init__(self, val=0, next=None):
+            self.val = val
+            self.next = next
+
+    def build(lst):
+        dummy = ListNode(0)
+        cur = dummy
+        for v in lst:
+            cur.next = ListNode(v)
+            cur = cur.next
+        return dummy.next
+
+    s = Solution()
+    print(s.isPalindrome(build([1, 2, 2, 1])))   # True
+    print(s.isPalindrome(build([1, 2])))         # False
