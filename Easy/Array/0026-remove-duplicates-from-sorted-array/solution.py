@@ -7,7 +7,7 @@ Approach
 Two pointers. Since the array is sorted, all duplicates are adjacent.
 `k` tracks the position where the next unique value should go (starts
 at 1, since nums[0] is always unique by definition). Walk through with
-`i`; whenever nums[i] differs from the previous element (nums[i-1]),
+"i"; whenever nums[i] differs from the previous element (nums[i-1]),
 it's a new unique value — write it at position k and advance k.
 
 The array is modified in place; k is returned as the count of unique
