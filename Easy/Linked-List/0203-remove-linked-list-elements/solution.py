@@ -5,7 +5,7 @@ https://leetcode.com/problems/remove-linked-list-elements/
 Approach
 --------
 First, strip off any matching values right at the head (possibly
-several in a row), since removing the head means reassigning `head`
+several in a row), since removing the head means reassigning "head"
 itself. Once head is either None or a non-matching value, walk the
 rest of the list with `temp`: whenever the *next* node matches val,
 skip over it by relinking temp.next; otherwise just advance normally.
