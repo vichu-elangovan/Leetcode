@@ -9,8 +9,8 @@ exactly one), the sum of 0..n is a known formula: n*(n+1)/2. Subtract
 the actual sum of the array from that expected sum — whatever's left
 over is the missing number.
 
-Time:  O(n) - one pass to sum the array
-Space: O(1) - just two running totals
+Time:  O(n) --> one pass to sum the array
+Space: O(1) --> just two running totals
 """
 
 
