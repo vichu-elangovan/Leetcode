@@ -11,8 +11,8 @@ Note: this approach relies on string conversion. A follow-up variant of
 this problem asks you to solve it without converting to a string
 (compare digits by reversing the number mathematically instead).
 
-Time:  O(n) - n = number of digits, for the conversion and reversal
-Space: O(n) - for the string representation
+Time:  O(n) --> n = number of digits, for the conversion and reversal
+Space: O(n) --> for the string representation
 """
 
 
