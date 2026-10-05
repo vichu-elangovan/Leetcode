@@ -24,7 +24,7 @@ class Solution(object):
         return arr
 
 
-# --- Solved example --------------------------------------------------------
+# ------------------------ Solved example ---------------------------------------
 # Input: nums = [0, 2, 1, 5, 3, 4]
 #
 # i=0: nums[nums[0]] = nums[0] = 0
