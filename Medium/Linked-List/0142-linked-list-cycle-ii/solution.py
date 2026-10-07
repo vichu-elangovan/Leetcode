@@ -15,7 +15,7 @@ they meet is mathematically guaranteed to be the start of the cycle
 (this follows from the distance relationships between head, the
 cycle start, and the meeting point in phase 1).
 
-If fast ever reaches the end (None), there's no cycle, so return None.
+If fast ever reaches the end (None), there is no cycle, so return None.
 
 Time:  O(n) - linear in both phases
 Space: O(1) - only a few pointers
