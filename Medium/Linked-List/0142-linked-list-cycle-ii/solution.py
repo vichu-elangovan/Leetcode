@@ -1,5 +1,5 @@
 """
-142. Linked List Cycle II  (Medium)
+142. Linked List Cycle II (medium)
 https://leetcode.com/problems/linked-list-cycle-ii/
 
 Approach
