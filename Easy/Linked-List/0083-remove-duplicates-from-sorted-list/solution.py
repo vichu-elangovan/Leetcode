@@ -2,6 +2,7 @@
 83. Remove Duplicates from Sorted List  (Easy)
 https://leetcode.com/problems/remove-duplicates-from-sorted-list/
 
+
 Approach
 --------
 Since the list is sorted, duplicates are always adjacent. Walk through
